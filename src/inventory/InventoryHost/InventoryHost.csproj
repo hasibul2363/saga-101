@@ -7,4 +7,12 @@
     <RootNamespace>CoolBrains.InventoryHost</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="MassTransit.RabbitMQ" Version="5.5.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Inventory.Messages\Inventory.Messages.csproj" />
+  </ItemGroup>
+
 </Project>
