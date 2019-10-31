@@ -10,7 +10,7 @@ namespace CoolBrains.CheckoutHost
         {
             CorrelationId = Guid.NewGuid();
         }
-
+        
         public Guid CheckoutId { get; set; }
         public Guid CorrelationId { get; set; }
         public Guid ProductId { get; set; }

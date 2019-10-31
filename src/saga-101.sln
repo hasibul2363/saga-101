@@ -17,9 +17,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaymentHost", "payment\Paym
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "crossCutting", "crossCutting", "{071CB321-EDE2-4746-ACC5-3BE327C04245}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Payment.Messages", "payment\Payment.Messages\Payment.Messages.csproj", "{9BF1D32F-DF07-485F-8D54-64AAB7871088}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Payment.Messages", "payment\Payment.Messages\Payment.Messages.csproj", "{9BF1D32F-DF07-485F-8D54-64AAB7871088}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inventory.Messages", "inventory\Inventory.Messages\Inventory.Messages.csproj", "{6BB4DB0F-774D-4619-81E6-3ADFD42195AE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inventory.Messages", "inventory\Inventory.Messages\Inventory.Messages.csproj", "{6BB4DB0F-774D-4619-81E6-3ADFD42195AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bus.Host", "crossCutting\Bus.Host\Bus.Host.csproj", "{7AAF7A73-45D6-4AEC-B67C-044B8FB8C988}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,6 +49,10 @@ Global
 		{6BB4DB0F-774D-4619-81E6-3ADFD42195AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6BB4DB0F-774D-4619-81E6-3ADFD42195AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6BB4DB0F-774D-4619-81E6-3ADFD42195AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AAF7A73-45D6-4AEC-B67C-044B8FB8C988}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AAF7A73-45D6-4AEC-B67C-044B8FB8C988}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AAF7A73-45D6-4AEC-B67C-044B8FB8C988}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AAF7A73-45D6-4AEC-B67C-044B8FB8C988}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -57,6 +63,7 @@ Global
 		{0EFF2BE3-58EB-405B-AD63-98083BCF775B} = {79B1AD7C-1060-4D1F-BA24-5531EE6744B9}
 		{9BF1D32F-DF07-485F-8D54-64AAB7871088} = {79B1AD7C-1060-4D1F-BA24-5531EE6744B9}
 		{6BB4DB0F-774D-4619-81E6-3ADFD42195AE} = {CC7C4851-86CA-4BC1-9C2B-33A16DA25129}
+		{7AAF7A73-45D6-4AEC-B67C-044B8FB8C988} = {071CB321-EDE2-4746-ACC5-3BE327C04245}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8BCED8C0-FB96-4416-9214-6E8386EDB2E4}

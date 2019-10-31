@@ -8,11 +8,24 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="MassTransit.Automatonymous" Version="5.5.6" />
-    <PackageReference Include="MassTransit.RabbitMQ" Version="5.5.6" />
+    <None Remove="appsettings.json" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MassTransit.Automatonymous" Version="5.5.6" />
+    <PackageReference Include="MassTransit.RabbitMQ" Version="5.5.6" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\crossCutting\Bus.Host\Bus.Host.csproj" />
     <ProjectReference Include="..\..\inventory\Inventory.Messages\Inventory.Messages.csproj" />
     <ProjectReference Include="..\..\payment\Payment.Messages\Payment.Messages.csproj" />
   </ItemGroup>
