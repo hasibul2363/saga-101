@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Bus.Host;
 using MassTransit;
 using MassTransit.ConsumeConfigurators;
+using MassTransit.Saga;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -20,13 +21,21 @@ namespace CoolBrains.CheckoutHost
             {
                 c.Consumer<CreatePendingCheckoutCommandHandler>();
                 //c.Consumer(()=> new CreatePendingCheckoutCommandHandler());
+
+
+                var stateMachine = new CheckoutStateMachine();
+                var repo = new InMemorySagaRepository<CheckoutState>();
+                c.StateMachineSaga(stateMachine, repo);
+                
+
+
             });
 
             await bootstrapper.Start();
             var bus = bootstrapper.GetBus();
             var sender = await bus.GetSendEndpoint(new Uri("rabbitmq://localhost/saga-101_checkout"));
 
-            await sender.Send<CreatePendingCheckoutCommand>(new CreatePendingCheckoutCommand
+            await sender.Send(new CreatePendingCheckoutCommand
             {
                 CorrelationId = Guid.NewGuid(),
                 CheckoutId = Guid.NewGuid(),

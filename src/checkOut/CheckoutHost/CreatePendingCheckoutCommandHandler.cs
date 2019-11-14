@@ -12,12 +12,14 @@ namespace CoolBrains.CheckoutHost
         {
             Console.WriteLine($"1. Checkout Handler: Checkout has created with id {context.Message.CheckoutId} and amount {context.Message.Amount}");
 
-            //await context.Publish(new CheckoutCreated
-            //{
-            //    CorrelationId = context.Message.CorrelationId, ProductId = context.Message.ProductId,
-            //    CheckoutId = context.Message.CheckoutId, Amount = context.Message.Amount,
-            //    CheckoutBy = context.Message.CheckoutBy
-            //});
+            await context.Publish(new CheckoutCreated
+            {
+                CorrelationId = context.Message.CorrelationId,
+                ProductId = context.Message.ProductId,
+                CheckoutId = context.Message.CheckoutId,
+                Amount = context.Message.Amount,
+                CheckoutBy = context.Message.CheckoutBy
+            });
         }
     }
 }

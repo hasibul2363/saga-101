@@ -7,10 +7,15 @@ namespace CoolBrains.PaymentHost
 {
     public class DoPaymentCommandHandler : IConsumer<DoPaymentCommand>
     {
-        public Task Consume(ConsumeContext<DoPaymentCommand> context)
+        public async Task Consume(ConsumeContext<DoPaymentCommand> context)
         {
             Console.WriteLine($"2. Payment has collected with coreelation id");
-            return Task.CompletedTask;
+            await context.Publish(new PaymentPerformed
+            {
+                Amount = context.Message.Amount, CorrelationId = context.Message.CorrelationId,
+                CheckoutId = context.Message.CheckoutId
+            });
+            
         }
     }
 }

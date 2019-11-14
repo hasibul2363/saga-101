@@ -52,9 +52,12 @@ namespace Bus.Host
                     h.Password(_rabbitSetting.Password);
                 });
 
+                //configurator.ReceiveEndpoint(host, queue, c =>
+                //{
+                //    c.ConfigureConsumer(_serviceCollection.BuildServiceProvider());
+                //});
                 configurator.ReceiveEndpoint(host, queue, configure);
-                
-                
+
             });
             
             return bus;
